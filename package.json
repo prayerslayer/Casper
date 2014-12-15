@@ -1,4 +1,27 @@
 {
   "name": "Casper",
-  "version": "1.1.1"
+  "version": "1.1.1",
+  "description": "The default theme for [Ghost](http://github.com/tryghost/ghost/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prayerslayer/Casper.git"
+  },
+  "author": "Nikolaus Piccolotto <nikolaus.piccolotto@zalando.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prayerslayer/Casper/issues"
+  },
+  "homepage": "https://github.com/prayerslayer/Casper",
+  "devDependencies": {
+    "del": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-concat": "^2.4.2",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-less": "^2.0.1"
+  }
 }
