@@ -1,23 +1,48 @@
 {{! Previous/next page links - only displayed on page 2+ }}
-<div>
+{{!-- <div>
     {{pagination}}
-</div>
+</div> --}}
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article>
-    <header>
-        <h2><a href="{{url}}">{{{title}}}</a></h2>
-    </header>
-    <section>
-        <p>{{excerpt words="26"}} <a href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer>
-        {{#if author.image}}<img src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        {{author}}
-        {{tags prefix=" on "}}
-        <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    </footer>
+<article class="row">
+    {{#if image}}
+        <div
+            class="post-excerpt twelve columns has-image"
+            style="background-image: url({{image}});">
+
+            <div
+                class="post-excerpt-content">
+                <header>
+                    <h4><a href="{{url}}">{{{title}}}</a></h4>
+                </header>
+                <section>
+                    <p>{{excerpt words="30"}}…</p>
+                </section>
+                <footer>
+                    {{!-- {{#if author.image}}<img src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}} --}}
+                    von {{author}}
+                    {{!-- {{tags prefix=" on "}} --}}
+                    {{!-- <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> --}}
+                </footer>
+            </div>
+        </div>
+    {{else}}
+        <div class="post-excerpt eight columns offset-by-two">
+            <header>
+                <h4><a href="{{url}}">{{{title}}}</a></h4>
+            </header>
+            <section>
+                <p>{{excerpt words="30"}}…</p>
+            </section>
+            <footer>
+                {{!-- {{#if author.image}}<img src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}} --}}
+                von {{author}}
+                {{!-- {{tags prefix=" on "}} --}}
+                {{!-- <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> --}}
+            </footer>
+        </div>
+    {{/if}}
 </article>
 {{/foreach}}
 

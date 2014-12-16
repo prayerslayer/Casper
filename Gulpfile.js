@@ -46,7 +46,7 @@ gulp.task( 'build', [
 ]);
 
 gulp.task( 'delete:ghost', function( done ) {
-    return del( '../Ghost/content/themes/casper/**', {
+    return del( '../Ghost/content/themes/casper/*', {
         force: true
     }, done );
 });

@@ -1,0 +1,28 @@
+@import "variables";
+
+.home-template {
+    .post-excerpt {
+        height: 40vw;
+
+        &.has-image {
+            background-size: cover;
+            background-position: center;
+
+            .post-excerpt-content {
+                background-color: fade( #31000d, 75% );
+                height: 100%;
+                color: white;
+
+                
+                width: 40%;
+                @media( max-width: 480px ) {
+                    width: 100%;
+                }
+
+                > * {
+                    margin: 0 .5rem;
+                }
+            }
+        }
+    }
+}
