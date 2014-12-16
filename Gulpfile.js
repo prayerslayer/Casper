@@ -4,6 +4,7 @@ var srcDir = 'src/',
 
 var gulp = require( 'gulp' ),
     less = require( 'gulp-less' ),
+    del = require( 'del' ),
     concat = require( 'gulp-concat' ),
     vendor = require( 'gulp-autoprefixer' );
 
@@ -44,7 +45,13 @@ gulp.task( 'build', [
     'build:fonts'
 ]);
 
-gulp.task( 'apply', [ 'build' ], function() {
+gulp.task( 'delete:ghost', function( done ) {
+    return del( '../Ghost/content/themes/casper/**', {
+        force: true
+    }, done );
+});
+
+gulp.task( 'apply', [ 'build', 'delete:ghost' ], function() {
     return gulp
             .src( dstDir + '**/*' )
             .pipe( gulp.dest( ghostDir ) );

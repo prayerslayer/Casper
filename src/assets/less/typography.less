@@ -1,13 +1,36 @@
 @import "variables";
 @import "fonts";
 
-@font-serif: 'MerriweatherRegular';
-@font-sans: 'OpenSansRegular';
+@font-serif-regular: 'MerriweatherRegular';
+@font-serif-bold: 'MerriweatherBold';
+@font-serif-italic: 'MerriweatherItalic';
+@font-serif-bolditalic: 'MerriweatherBoldItalic';
 
+@font-sans-regular: 'OpenSansRegular';
+@font-sans-regular-bold: 'OpenSansBold';
+@font-sans-regular-italic: 'OpenSansItalic';
+@font-sans-regular-bolditalic: 'OpenSansBoldItalic';
+
+@font-sans-light: 'OpenSansLight';
+@font-sans-extrabold: 'OpenSansExtraBold';
 
 body {
-    font-family: @font-serif;
+    font-family: @font-serif-regular;
 }
+
+strong {
+    font-family: @font-serif-bold;
+}
+
+em {
+    font-family: @font-serif-italic;
+}
+
+strong > em,
+em > strong {
+    font-family: @font-serif-bolditalic;
+}
+
 
 h1,
 h2,
@@ -15,5 +38,5 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: @font-sans;
+    font-family: @font-sans-extrabold;
 }
