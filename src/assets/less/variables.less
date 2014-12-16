@@ -1,12 +1,12 @@
-@font-serif-regular: 'MerriweatherRegular';
+@font-serif: 'MerriweatherRegular';
 @font-serif-bold: 'MerriweatherBold';
 @font-serif-italic: 'MerriweatherItalic';
 @font-serif-bolditalic: 'MerriweatherBoldItalic';
 
-@font-sans-regular: 'OpenSansRegular';
-@font-sans-regular-bold: 'OpenSansBold';
-@font-sans-regular-italic: 'OpenSansItalic';
-@font-sans-regular-bolditalic: 'OpenSansBoldItalic';
+@font-sans: 'OpenSansRegular';
+@font-sans-bold: 'OpenSansBold';
+@font-sans-italic: 'OpenSansItalic';
+@font-sans-bolditalic: 'OpenSansBoldItalic';
 
 @font-sans-light: 'OpenSansLight';
 @font-sans-extrabold: 'OpenSansExtraBold';
@@ -21,3 +21,10 @@
 @layer-7: 70;
 @layer-8: 80;
 @layer-9: 90;
+
+
+.transition(...) {
+    transition-property: @arguments;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
