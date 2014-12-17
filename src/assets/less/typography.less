@@ -1,23 +1,15 @@
 @import "variables";
 @import "fonts";
 
-/** Modular Scale
- *  20px @ 1:1.25
- */
-
-@font-size-huge: 48.829px;
-@font-size-biggest: 39.063px;
-@font-size-bigger: 31.25px;
-@font-size-big: 25px;
-@font-size: 20px;
-@font-size-small: 16px;
-@font-size-smaller: 12.8px;
-@font-size-smallest: 10.24px;
-@font-size-tiny: 8.192px;
-
 body {
     font-family: @font-serif;
+    font-size: @font-size;
     line-height: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid;
 }
 
 strong {
@@ -45,15 +37,25 @@ h6 {
 
 h1 {
     font-size: @font-size-huge;
+    font-family: @font-sans-black;
+    letter-spacing: .03em;
+    line-height: 1.15em;
 }
 
 h2 {
     font-size: @font-size-biggest;
     letter-spacing: .02em;
+    a {
+        border-width: 4px;
+    }
 }
 
 h3 {
     font-size: @font-size-bigger;
+    letter-spacing: .04em;
+    a {
+        border-width: 2px;
+    }
 }
 
 h4 {

@@ -6,22 +6,21 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<main role="main">
+<main class="container" role="main">
+    <article class="post {{post_class}}">
 
-    <article class="{{post_class}}">
-
-        <header>
+        <header class="post-title">
             <h1>{{title}}</h1>
             <section>
-                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                
             </section>
         </header>
 
-        <section>
+        <section class="post-content">
             {{content}}
         </section>
 
-        <footer>
+        <footer class="post-footer">
 
         {{! Everything inside the #author tags pulls data from the author }}
         {{#author}}
@@ -34,7 +33,7 @@
 
             <section>
                 <h4><a href="{{url}}">{{name}}</a></h4>
-
+                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
                 {{#if bio}}
                     <p>{{bio}}</p>
                 {{else}}
