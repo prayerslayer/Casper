@@ -9,11 +9,37 @@
     }
 
     .menu {
+        &.is-selected {
+            .menu-item {
+                color: #aaa;
+                &[selected] {
+                    color: black;
+                    // font-family: @font-sans-bold;
+                }
+            }
+        }
         .menu-item {
+            .transition( color );
+            position: relative;
+            top: 0px;
             font-family: @font-sans;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: .2em;
+            user-select: none;
+            cursor: pointer;
+        }
+    }
+
+    .menu-content {
+        .transition( height );
+        height: 0px;
+        position: relative;
+        left: -.5em;
+        box-shadow: inset 0px 0px 3px gray;
+        border-bottom: 1px solid #eee;
+        &.is-open {
+            height: 10em;
         }
     }
 }

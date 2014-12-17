@@ -1,62 +1,35 @@
 <header class="header container">
     <div class="row">
         <div class="twelve columns">
-            <h1 class="header-title">NBACHEF</h1>
+            <h1 class="header-title">{{ @blog.title }}</h1>
         </div>
     </div>
     <div class="row menu">
-        <div class="menu-item four columns">
+        <div
+            data-header-menu="nba"
+            class="menu-item four columns">
             NBA
         </div>
-        <div class="menu-item four columns">
+        <div
+            data-header-menu="teams"
+            class="menu-item four columns">
             Teams
         </div>
-        <div class="menu-item four columns">
+        <div
+            data-header-menu="spieler"
+            class="menu-item four columns">
             Spieler
         </div>
     </div>
-    <div class="row menu-content">
-        <div class="four columns">
-            <div
-                <a href="">All NBA</a>
-            </div>
-            <div
-                <a href="">What The Dealy</a>
-            </div>
-            <div
-                <a href="">Layup Line</a>
-            </div>
-            <div
-                <a href="">NBA TV</a>
-            </div>
+    <div class="row menu-content" data-fit-window-width="">
+        <div class="menu-content-item hidden" data-header-menu-content="nba">
+            NBA
         </div>
-        <div class="four columns">
-            <div>
-                <a href="">History</a>
-            </div>
-            <div>
-                <a href="">Gerüchteküche</a>
-            </div>
-            <div>
-                <a href="">Front Office</a>
-            </div>
-            <div>
-                <a href="">Lorem ipsum</a>
-            </div>
+        <div class="menu-content-item hidden" data-header-menu-content="teams">
+            teams
         </div>
-        <div class="four columns">
-            <div
-                <a href="">All NBA</a>
-            </div>
-            <div
-                <a href="">What The Dealy</a>
-            </div>
-            <div
-                <a href="">Layup Line</a>
-            </div>
-            <div
-                <a href="">NBA TV</a>
-            </div>
+        <div class="menu-content-item hidden" data-header-menu-content="spieler">
+            spieler
         </div>
     </div>
 </header>

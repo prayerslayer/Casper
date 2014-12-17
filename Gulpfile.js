@@ -2,11 +2,20 @@ var srcDir = 'src/',
     dstDir = 'dist/',
     ghostDir = '../Ghost/content/themes/casper/';
 
-var gulp = require( 'gulp' ),
-    less = require( 'gulp-less' ),
-    del = require( 'del' ),
-    concat = require( 'gulp-concat' ),
-    vendor = require( 'gulp-autoprefixer' );
+var gulp    = require( 'gulp' ),
+    less    = require( 'gulp-less' ),
+    jshint  = require( 'gulp-jshint' ),
+    stylish = require( 'jshint-stylish' ),
+    del     = require( 'del' ),
+    concat  = require( 'gulp-concat' ),
+    vendor  = require( 'gulp-autoprefixer' );
+
+gulp.task( 'check:js', function() {
+    return gulp
+            .src( srcDir + 'assets/js/**/*.js' )
+            .pipe( jshint() )
+            .pipe( jshint.reporter( stylish ) );
+});
 
 gulp.task( 'build:less', function() {
     return gulp
@@ -38,11 +47,19 @@ gulp.task( 'build:css', [ 'build:less' ], function() {
             .pipe( gulp.dest( dstDir + 'assets/css/' ) );
 });
 
+gulp.task( 'build:js', [ 'check:js' ], function() {
+    return gulp
+            .src( srcDir + 'assets/js/**/*.js' )
+            .pipe( concat( 'site.js' ) )
+            .pipe( gulp.dest( dstDir + 'assets/js/' ) );
+});
+
 gulp.task( 'build', [
     'build:less',
     'build:css',
     'build:templates',
-    'build:fonts'
+    'build:fonts',
+    'build:js'
 ]);
 
 gulp.task( 'delete:ghost', function( done ) {
