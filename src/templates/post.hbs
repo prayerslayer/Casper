@@ -8,13 +8,13 @@
 
 <header
     class="post-header {{#if image}}has-image{{/if}}"
-    data-fit-window-width=""
-    data-fit-window-height=""
+    data-fit-window-width="0"
+    data-fit-window-height="30"
     style="{{#if image}}background-image: url({{image}});{{/if}}">
     <h1 class="post-title">{{title}}</h1>
 </header>
 
-<main class="container" role="main" data-offset-window-height="50">
+<main class="container" role="main">
     <article class="post {{post_class}}">
         <section            
             class="post-content">
@@ -38,7 +38,8 @@
         </footer>
 
     </article>
-
 </main>
 
 {{/post}}
+
+{{> footer}}

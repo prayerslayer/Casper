@@ -7,22 +7,30 @@
         margin: 0 auto;
     }
     .post-header {
-        position: absolute;
-        top: 0;
-        left: 0;
         background: @blue;
+        margin-bottom: 4em;
+        position: relative;
+        top: -30px; //navbar
+        background: radial-gradient( circle at center, @blue 0%, darken(@blue, 10%) 100% );
         
-        .post-title {
-            color: @white;
-            position: relative;
-            background: @blue;
-            top: 50%;
-            padding-left: .5em;
-        }
-
         &.has-image {
             background-size: cover;
             background-position: center;
+            background-blend-mode: lighten;
+
+            .post-title {
+                background: fade( @blue, 70% );
+            }
+        }
+
+        .post-title {
+            color: @white;
+            position: relative;
+            top: 50%;
+            padding-top: 1em;
+            padding-bottom: 1.5em;
+            margin: 0;
+            text-align: center;
         }
     }
 
@@ -36,25 +44,50 @@
             margin-top: 3em;
         }
 
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 2em;
+        }
+
         p {
             img {
-                width: 100%;
-                @media( min-width: 960px ) {                
-                    position: relative;
-                    width: 125%;
-                    left: -12.5%;
-                }
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
             }
 
-            + p {
+            + p,
+            + blockquote,
+            + ul,
+            + ol {
                 margin-top: 2em;
             }
+        }
+
+        ul + p,
+        blockquote + p,
+        ol + p {
+            margin-top: 2em;
+        }
+
+        blockquote {
+            padding: 2em;
+            padding-left: 2em;
+            padding-right: 0;
+            margin-left: 0;
+            margin-right: 0;
+            border-left: .5em solid @red;
+            font-family: @font-serif-italic;
+            background: #eee;
+            color: @gray-dark;
         }
 
         .twitter-tweet {
             margin: 3em 0 !important;
             width: 100% !important;
-            @media( min-width: 960px ) {
+            @media( min-width: @bp-desktop ) {
                 position: relative !important;
                 width: 80% !important;
                 left: 10% !important;

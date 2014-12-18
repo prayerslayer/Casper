@@ -3,6 +3,7 @@
 
 @import "partials/navbar";
 @import "partials/header";
+@import "partials/footer";
 @import "partials/post-excerpt";
 @import "partials/author";
 
@@ -11,10 +12,13 @@
 
 html {
     min-width: 240px;
-    padding: .5em;
     font-size: @font-size;
     color: @black;
     background: fade(multiply(@white, @blue), 1%);
+}
+
+main {
+    padding: .5em;
 }
 
 ::selection {
