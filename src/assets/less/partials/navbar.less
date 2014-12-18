@@ -5,24 +5,30 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 30px;
+    // height: 30px;
     width: 100%;
     z-index: @layer-8;
     background: white;
     color: @black;
-    font-family: @font-sans;
-    strong {
-        font-family: @font-sans-bold;
-    }
+    font-family: @font-sans-light;
     box-shadow: 0px 0px 2px @gray;
 
     &.is-hidden {
         transform: translateY(-35px);
     }
 
+    .navbar-logo {
+        a {
+            text-decoration: none;
+            border: none;
+            color: @gray;
+            letter-spacing: .4em
+        }
+    }
+
     .column {
         float: left;
-        width: 21%;
+        width: 29%;
         margin-left: 4%;
     }
 }
