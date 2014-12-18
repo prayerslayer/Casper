@@ -1,0 +1,28 @@
+@import "../variables";
+
+.navbar {
+    .transition( transform );
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    z-index: @layer-8;
+    background: white;
+    color: @black;
+    font-family: @font-sans;
+    strong {
+        font-family: @font-sans-bold;
+    }
+    box-shadow: 0px 0px 2px @gray;
+
+    &.is-hidden {
+        transform: translateY(-30px);
+    }
+
+    .column {
+        float: left;
+        width: 21%;
+        margin-left: 4%;
+    }
+}

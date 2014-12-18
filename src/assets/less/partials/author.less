@@ -1,0 +1,40 @@
+@import "../variables";
+
+.author {
+    @media(min-width: @bp-mobile) {
+        margin-left: 10%;
+    }
+    .author-image {
+        float: left;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-position: center;
+        background-size: cover;
+        
+        @media(max-width: @bp-mobile) {
+            margin: 0 auto;
+            float: none;
+        }
+    }
+
+    .author-info {
+        float: left;
+        margin-left: 1em;
+        font-family: @font-sans;
+        width: 60%;
+
+        @media(max-width: @bp-mobile) {
+            width: 90%;
+            float: none;
+        }
+
+        .author-website,
+        .author-location {
+            color: @gray;
+        }
+        strong {
+            font-family: @font-sans-bold;
+        }
+    }
+}

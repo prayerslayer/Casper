@@ -1,14 +1,11 @@
 {{! Previous/next page links - only displayed on page 2+ }}
-{{!-- <div>
-    {{pagination}}
-</div> --}}
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
 <article class="row">
     {{#if image}}
         <div class="twelve columns">
-            {{> post-excerpt sizeBig=true}}
+            {{> post-excerpt sizeBig=true excerptLong=true}}
         </div>
     {{else}}
         {{#if featured}}
@@ -23,6 +20,3 @@
     {{/if}}
 </article>
 {{/foreach}}
-
-{{! Previous/next page links - displayed on every page }}
-{{pagination}}

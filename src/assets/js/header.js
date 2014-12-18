@@ -47,6 +47,6 @@
         // toggle this
         toggle( $this, !state );
         $( '.menu-content' ).toggleClass( 'is-open', !state );
-        $( '.menu' ).toggleClass( 'is-selected', !state );
+        $( '.menu' ).toggleClass( 'has-selection', !state );
     });
 })(jQuery);

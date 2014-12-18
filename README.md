@@ -1,12 +1,10 @@
 # TODO
 
 * Post Page
-    * Header
     * Footer
 * Related Posts
 * Page Header
     * Header Menu Links
-    * Scroll Header
 * Index Page
     * Featured?
 * Collection Page

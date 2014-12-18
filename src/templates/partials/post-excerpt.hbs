@@ -10,7 +10,11 @@
             <h3 class="post-excerpt-description-title">{{{title}}}</h3>
         </header>
         <section class="post-excerpt-description-content">
-            <p>{{excerpt words="30"}}…</p>
+            {{#if excerptLong}}
+                <p>{{excerpt words="50"}}…</p>
+            {{else}}
+                <p>{{excerpt words="25"}}…</p>
+            {{/if}}
         </section>
         <footer>
             {{!-- {{#if author.image}}<img src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}} --}}

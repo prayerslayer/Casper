@@ -1,4 +1,4 @@
-@import "variables";
+@import "../variables";
 
 .header {
     .header-title {
@@ -10,7 +10,7 @@
     }
 
     .menu {
-        &.is-selected {
+        &.has-selection {
             .menu-item {
                 color: @gray-light;
                 &[selected] {
@@ -39,10 +39,14 @@
         height: 0px;
         position: relative;
 
-        box-shadow: inset 0px -1px 4px -1px @gray;
-        border-bottom: 1px solid darken(@white, 1%);
+        // box-shadow: inset 0px -1px 4px -1px @gray;
+        
+        
+        border-top: 1px solid darken(@white, 1%);
+       
         &.is-open {
-            height: 10em;
+            height: 10em;     
+            border-bottom: 1px solid darken(@white, 1%);    
         }
 
         .menu-content-item {

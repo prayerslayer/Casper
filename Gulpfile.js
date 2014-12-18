@@ -75,7 +75,8 @@ gulp.task( 'apply', [ 'build', 'delete:ghost' ], function() {
 });
 
 gulp.task( 'watch', function() {
-    return gulp.watch( srcDir + '**/*.*', [ 'apply' ]);
+    return gulp.watch( srcDir + '**/*.*', [ 'apply' ])
+            .on('error', console.log.bind(console));
 });
 
 gulp.task( 'default', ['watch'] );
