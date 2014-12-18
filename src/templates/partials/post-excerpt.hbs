@@ -1,0 +1,22 @@
+<div
+    data-anchor="{{url}}"
+    style="{{#if image}}background-image: url({{image}});{{/if}}"
+    class="post-excerpt
+{{#if image}}has-image{{/if}}
+{{#if featured}}is-featured{{/if}}
+{{#if sizeBig}}is-big{{/if}}">
+    <div class="post-excerpt-description">
+        <header>
+            <h3 class="post-excerpt-description-title">{{{title}}}</h3>
+        </header>
+        <section class="post-excerpt-description-content">
+            <p>{{excerpt words="30"}}…</p>
+        </section>
+        <footer>
+            {{!-- {{#if author.image}}<img src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}} --}}
+            von {{author.name}}
+            {{!-- {{tags prefix=" on "}} --}}
+            {{!-- <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> --}}
+        </footer>
+    </div>
+</div>

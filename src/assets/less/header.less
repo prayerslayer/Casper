@@ -6,15 +6,15 @@
         letter-spacing: 1em;
         margin-left: 1em;
         font-family: @font-sans-thin;
+        color: @gray-light;
     }
 
     .menu {
         &.is-selected {
             .menu-item {
-                color: #aaa;
+                color: @gray-light;
                 &[selected] {
-                    color: black;
-                    // font-family: @font-sans-bold;
+                    color: @red;
                 }
             }
         }
@@ -28,6 +28,9 @@
             letter-spacing: .2em;
             user-select: none;
             cursor: pointer;
+            &:hover {
+                color: @red;
+            }
         }
     }
 
@@ -35,10 +38,9 @@
         .transition( height );
         height: 0px;
         position: relative;
-        left: -.5em;
 
-        box-shadow: inset 0px 0px 2px gray;
-        border-bottom: 1px solid #eee;
+        box-shadow: inset 0px -1px 4px -1px @gray;
+        border-bottom: 1px solid darken(@white, 1%);
         &.is-open {
             height: 10em;
         }

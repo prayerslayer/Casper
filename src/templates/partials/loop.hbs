@@ -7,44 +7,19 @@
 {{#foreach posts}}
 <article class="row">
     {{#if image}}
-        <div
-            class="post-excerpt twelve columns has-image"
-            style="background-image: url({{image}});">
-
-            <div class="post-excerpt-content">
-                <div>
-                    <header>
-                        <h3><a href="{{url}}">{{{title}}}</a></h3>
-                    </header>
-                    <section>
-                        <p>{{excerpt words="30"}}…</p>
-                    </section>
-                    <footer>
-                        {{!-- {{#if author.image}}<img src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}} --}}
-                        von {{author.name}}
-                        {{!-- {{tags prefix=" on "}} --}}
-                        {{!-- <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> --}}
-                    </footer>
-                </div>
-            </div>
+        <div class="twelve columns">
+            {{> post-excerpt sizeBig=true}}
         </div>
     {{else}}
-        <div class="post-excerpt eight columns offset-by-two">
-            <header>
-                <h2>
-                    <a href="{{url}}">{{{title}}}</a>
-                </h2>
-            </header>
-            <section>
-                <p>{{excerpt words="30"}}…</p>
-            </section>
-            <footer>
-                {{!-- {{#if author.image}}<img src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}} --}}
-                von {{author.name}}
-                {{!-- {{tags prefix=" on "}} --}}
-                {{!-- <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> --}}
-            </footer>
-        </div>
+        {{#if featured}}
+            <div class="twelve columns">
+                {{> post-excerpt sizeBig=true}}
+            </div>
+        {{else}}
+            <div class="eight columns offset-by-two">
+                {{> post-excerpt}}
+            </div>
+        {{/if}}
     {{/if}}
 </article>
 {{/foreach}}

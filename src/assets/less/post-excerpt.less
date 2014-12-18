@@ -1,0 +1,43 @@
+@import "variables";
+
+.post-excerpt {
+    cursor: pointer;
+    &:hover {
+        &.has-image {
+            .post-excerpt-description {
+                background-color: fade( @blue, 90% );
+            }
+        }
+    }
+
+    .post-excerpt-description {
+        .transition( background-color );
+        .post-excerpt-description-title {
+            border-bottom: 3px solid;
+        }
+
+    }
+
+    &.has-image {
+        background-size: cover;
+        background-position: center;
+
+        .post-excerpt-description {
+            background-color: fade( @blue, 75% );
+            height: 100%;
+            color: @white;
+            font-family: @font-sans;
+
+            > * {
+                margin: 0 .5rem;
+            }
+        }
+    }
+
+    &.is-big {
+        .post-excerpt-description {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}

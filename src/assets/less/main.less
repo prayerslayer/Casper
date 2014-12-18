@@ -4,12 +4,19 @@
 @import "header";
 @import "index";
 @import "post";
+@import "post-excerpt";
 
 html {
     min-width: 240px;
     padding: .5em;
     font-size: @font-size;
-    
+    color: @black;
+    background: fade(multiply(@white, @blue), 1%);
+}
+
+::selection {
+    background: @black;
+    color: @white;
 }
 
 .hidden {
