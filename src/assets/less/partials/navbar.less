@@ -18,17 +18,37 @@
     }
 
     .navbar-logo {
-        a {
-            text-decoration: none;
-            border: none;
-            color: @gray;
-            letter-spacing: .4em
-        }
+        text-decoration: none;
+        border: none;
+        color: @gray;
+        letter-spacing: .4em
     }
 
     .column {
         float: left;
         width: 29%;
         margin-left: 4%;
+    }
+}
+
+.branded-navbar(@team) {
+    .navbar {
+        .team-background(@team);
+        .navbar-logo {
+            .team-color(@team);
+        }
+    }
+}
+
+// branding
+body.covers-single-team {
+    &.tag-golden-state-warriors {
+        .branded-navbar("golden-state-warriors");
+    }
+    &.tag-new-orleans-pelicans {
+        .branded-navbar("new-orleans-pelicans");
+    }
+    &.tag-orlando-magic {
+        .branded-navbar("orlando-magic");
     }
 }

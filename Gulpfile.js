@@ -5,6 +5,7 @@ var srcDir = 'src/',
 var gulp    = require( 'gulp' ),
     less    = require( 'gulp-less' ),
     jshint  = require( 'gulp-jshint' ),
+    plumber = require( 'gulp-plumber' ),
     stylish = require( 'jshint-stylish' ),
     del     = require( 'del' ),
     concat  = require( 'gulp-concat' ),
@@ -20,6 +21,7 @@ gulp.task( 'check:js', function() {
 gulp.task( 'build:less', function() {
     return gulp
             .src( srcDir + 'assets/less/main.less' )
+            .pipe( plumber() )
             .pipe( less() )
             .pipe( vendor() )
             .pipe( gulp.dest( dstDir + 'assets/css/' ) );

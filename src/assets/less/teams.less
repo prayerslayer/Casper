@@ -1,0 +1,92 @@
+// team colors
+@hawks-primary: #000080;
+@hawks-secondary: #FF0000;
+@celtics-primary: #009E60;
+@celtics-secondary: #FFFFFF;
+@nets-primary: #000;
+@nets-secondary: #fff;
+@hornets-primary: #1C0C65;
+@hornets-secondary: #1D8CAA;
+@bulls-primary: #D4001F;
+@bulls-secondary: #fff;
+@cavaliers-primary: #B3121D;
+@cavaliers-secondary: #FFD700;
+@mavericks-primary: #0B60AD;
+@mavericks-secondary: #072156;
+@nuggets-primary: #4B90CD;
+@nuggets-secondary: #FDB827;
+@pistons-primary: #00519A;
+@pistons-secondary: #EB003C;
+@warriors-primary: #04529C;
+@warriors-secondary: #FFCC33;
+@rockets-primary: #CE1138;
+@rockets-secondary: #CCCCCC;
+@pacers-primary: #092C57;
+@pacers-secondary: #FFC322;
+@clippers-primary: #EE2944;
+@clippers-secondary: #146AA2;
+@lakers-primary: #4A2583;
+@lakers-secondary: #F5AF1B;
+@grizzlies-primary: #001F70;
+@grizzlies-secondary: #7399C6;
+@heat-primary: #B62630;
+@heat-secondary: #000;
+@bucks-primary: #003614;
+@bucks-secondary: #E32636;
+@timberwolves-primary: #0F4D92;
+@timberwolves-secondary: #50C878;
+@pelicans-primary: #002B5C;
+@pelicans-secondary: #B4975A;
+@knicks-primary: #0953A0;
+@knicks-secondary: #FF7518;
+@thunder-primary: #007DC3;
+@thunder-secondary: #F05133;
+@magic-primary: #0047AB;
+@magic-secondary: #708090;
+@sixers-primary: #0046AD;
+@sixers-secondary: #D0103A;
+@suns-primary: #1C105E;
+@suns-secondary: #E65F20;
+@trailblazers-primary: #F0163A;
+@trailblazers-secondary: #B6BFBF;
+@kings-primary: #753BBD;
+@kings-secondary: #8A8D8F;
+@spurs-primary: #BEC8C9;
+@spurs-secondary: #000000;
+@raptors-primary: #B31B1B;
+@raptors-secondary: #708090;
+@jazz-primary: #00275D;
+@jazz-secondary: #0D4006;
+@wizards-primary: #C60C30;
+@wizards-secondary: #002244;
+
+.team-color( @team ) when (@team="golden-state-warriors") {
+    color: @warriors-secondary;
+}
+.team-color( @team ) when (@team="new-orleans-pelicans") {
+    color: @pelicans-secondary;
+}
+.team-color( @team ) when (@team="orlando-magic") {
+    color: @white;
+}
+
+
+.team-background( @team; @opacity: 100%; ) when (@team="golden-state-warriors") {
+    background: fade( @warriors-primary, @opacity );
+}
+.team-background( @team; @opacity: 100%; ) when (@team="new-orleans-pelicans") {
+    background: fade( @pelicans-primary, @opacity );
+}
+.team-background( @team; @opacity: 100%; ) when (@team="orlando-magic") {
+    background: fade( @magic-primary, @opacity );
+}
+
+.team-radial-background( @team ) when (@team="golden-state-warriors") {
+    background: radial-gradient( circle at center, @warriors-primary 0%, darken(@warriors-primary, 10%) 100% );
+}
+.team-radial-background( @team ) when (@team="new-orleans-pelicans") {
+    background: radial-gradient( circle at center, @pelicans-primary 0%, darken(@pelicans-primary, 10%) 100% );
+}
+.team-radial-background( @team ) when (@team="orlando-magic") {
+    background: radial-gradient( circle at center, @magic-primary 0%, darken(@magic-primary, 10%) 100% );
+}

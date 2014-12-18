@@ -1,32 +1,65 @@
 @import "variables";
+@import "teams";
+
+@bg-opacity: 70%;
+
+.branded-header( @team ) {
+    .post-header {
+        &:not(.has-image) {
+            .team-radial-background(@team);
+            .post-title {
+                .team-color(@team);
+            }
+        }
+        &.has-image {
+            .post-title {
+                .team-background( @team, @bg-opacity );
+                .team-color( @team );
+            }
+        }
+    }
+}
 
 .post-template {
+
+    &.covers-single-team {
+        &.tag-golden-state-warriors {
+            .branded-header("golden-state-warriors");
+        }
+        &.tag-new-orleans-pelicans {
+            .branded-header("new-orleans-pelicans");
+        }
+        &.tag-orlando-magic {
+            .branded-header("orlando-magic");
+        }
+    }
 
     .post {
         max-width: 650px;
         margin: 0 auto;
     }
     .post-header {
-        background: @blue;
         margin-bottom: 4em;
         position: relative;
         top: -30px; //navbar
-        background: radial-gradient( circle at center, @blue 0%, darken(@blue, 10%) 100% );
+        background: radial-gradient( circle at center, @gray-dark 0%, darken(@gray-dark, 10%) 100% );
         
         &.has-image {
             background-size: cover;
-            background-position: center;
+            background-repeat: no-repeat;
+            background-position: 50% 0%;
             background-blend-mode: lighten;
 
             .post-title {
-                background: fade( @blue, 70% );
+                top: 50%;
+                background: fade( @black, @bg-opacity );
             }
         }
 
         .post-title {
             color: @white;
             position: relative;
-            top: 50%;
+            top: 33%;
             padding-top: 1em;
             padding-bottom: 1.5em;
             margin: 0;
@@ -67,6 +100,7 @@
         }
 
         ul + p,
+        .fluid-width-video-wrapper + p,
         blockquote + p,
         ol + p {
             margin-top: 2em;
