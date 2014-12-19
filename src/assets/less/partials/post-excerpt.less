@@ -2,28 +2,27 @@
 
 .post-excerpt {
     cursor: pointer;
-
     .post-excerpt-description {
         .transition( background-color );
         .post-excerpt-description-title {
             border-bottom: 3px solid;
+            margin-top: 0;
         }
 
     }
 
     &.has-image {
+        text-shadow: 1px 1px @black;
         background-size: cover;
-        background-position: center;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
 
         .post-excerpt-description {
-            background-color: fade( @blue, 75% );
+            background-color: fade( @blue, 70% );
             height: 100%;
             color: @white;
             font-family: @font-sans;
-
-            > * {
-                margin: 0 .5rem;
-            }
+            padding: .5em .5em 1em .5em;
         }
     }
 

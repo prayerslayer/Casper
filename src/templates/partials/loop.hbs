@@ -5,18 +5,12 @@
 <article class="row">
     {{#if image}}
         <div class="twelve columns">
-            {{> post-excerpt sizeBig=true excerptLong=true}}
+            {{> post-excerpt sizeBig=true}}
         </div>
     {{else}}
-        {{#if featured}}
-            <div class="twelve columns">
-                {{> post-excerpt sizeBig=true}}
-            </div>
-        {{else}}
-            <div class="eight columns offset-by-two">
-                {{> post-excerpt}}
-            </div>
-        {{/if}}
+        <div class="eight columns offset-by-two">
+            {{> post-excerpt}}
+        </div>
     {{/if}}
 </article>
 {{/foreach}}
