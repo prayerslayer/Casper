@@ -1,13 +1,13 @@
 <section class="author {{#if image}}has-image{{/if}}">
 
     {{#if image}}
-    <div class="author-image" style="background-image:url({{image}});">
-    </div>
+        <div class="author-image" style="background-image:url({{image}});">
+        </div>
     {{/if}}
     
     <div class="author-info">
-        <strong>{{name}}</strong>
-        <div>
+        <strong class="author-name">{{name}}</strong>
+        <div class="author-metadata">
             {{#if location}}
             <div class="author-location">
                 <i class="icon-location"></i> {{location}}
@@ -20,9 +20,12 @@
             {{/if}}
         </div>
         {{#if bio}}
-            <p>{{bio}}</p>
+            <p class="author-bio">{{bio}}</p>
         {{/if}}
-        <p><a href="{{url}}">Mehr von {{name}} &rarr;</a></p>
-        
     </div>
+    {{#if showMore}}
+        <p class="author-more">
+            <a href="{{url}}">Mehr von {{name}} &rarr;</a>
+        </p>
+    {{/if}}
 </section>

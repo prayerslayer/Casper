@@ -1,42 +1,39 @@
 @import "../variables";
 
 .author {
-    display: table;
+    max-width: 300px;
+    margin: 0 auto;
     
-    @media(min-width: @bp-mobile) {
-        margin-left: 10%;
-    }
     .author-image {
-        float: left;
         width: 100px;
         height: 100px;
         border-radius: 100%;
         background-position: center;
         background-size: cover;
-        
-        @media(max-width: @bp-mobile) {
-            margin: 0 auto;
-            float: none;
-        }
+        margin: 0 auto;
     }
 
     .author-info {
-        float: left;
-        margin-left: 1em;
+        margin: 1em auto;
         font-family: @font-sans;
-        width: 60%;
-
-        @media(max-width: @bp-mobile) {
-            width: 90%;
-            float: none;
+        
+        .author-name {
+            display: block;
+            text-align: center;
         }
 
         .author-website,
         .author-location {
-            color: @gray;
+            color: @gray-light;
+            font-family: @font-sans-light;
         }
         strong {
             font-family: @font-sans-bold;
         }
+    }
+    
+    .author-more {
+        text-align: center;
+        font-family: @font-sans;
     }
 }

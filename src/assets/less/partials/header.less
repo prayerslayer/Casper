@@ -2,11 +2,16 @@
 
 .header {
     .header-title {
+        
         text-align: center;
-        letter-spacing: 2vw;
         margin-left: 1vw;
-        font-family: @font-sans-thin;
-        color: @gray-light;
+        a {
+            letter-spacing: 2vw;
+            text-decoration: none;
+            border: none;
+            font-family: @font-sans-thin;
+            color: @gray-light;
+        }
     }
 
     .menu {
@@ -38,10 +43,6 @@
         .transition( height );
         height: 0px;
         position: relative;
-
-        // box-shadow: inset 0px -1px 4px -1px @gray;
-        
-        
         border-top: 1px solid darken(@white, 1%);
        
         &.is-open {

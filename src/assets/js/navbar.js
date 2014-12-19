@@ -25,9 +25,9 @@
 
         if ( current > last ) {
             // scrolled down
-            $navbar.addClass( 'is-hidden' );
+            $navbar.addClass( 'is-up' );
         } else {
-            $navbar.removeClass( 'is-hidden' );
+            $navbar.removeClass( 'is-up' );
         }
 
         last = current;

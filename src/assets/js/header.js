@@ -21,9 +21,7 @@
         $( '[' + contentAttr + ']' ).each( function() {
             var $this = $(this);
             if ( $this.attr( contentAttr ) === id && on ) {
-                $this.show();
-            } else {
-                $this.hide();
+                $this.removeClass( 'is-hidden' );
             }
         });
         $el.data( dataId, on );
@@ -42,7 +40,7 @@
         $( '[' + menuAttr + ']' )
             .attr( 'selected', false )
             .data( dataId, false );
-        $( '[' + contentAttr + ']' ).hide();
+        $( '[' + contentAttr + ']' ).addClass('is-hidden');
 
         // toggle this
         toggle( $this, !state );
