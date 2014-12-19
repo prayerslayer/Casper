@@ -45,8 +45,11 @@
         border-top: 1px solid darken(@white, 1%);
        
         &.is-open {
-            height: 10em;     
+            height: 19em;
             border-bottom: 1px solid darken(@white, 1%);    
+            @media(max-width: @bp-mobile ) {
+                height: 47em;
+            }
         }
 
         .menu-content-item {
